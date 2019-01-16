@@ -1,52 +1,28 @@
-scum
-==============
+SCUM
+====
 
-Template for a simple Vaadin application that only requires a Servlet 3.0 container to run.
+SCUM(浮渣)游戏管理员命令查询及快速拷贝。
+
+![](https://scumgame.com/static/assets/images/footer/footer-guy.png)
+
+网址
+===
+
+[命令查询网站](https://bbkki.com/scum)
+
+[SCUM官方网站](https://scumgame.com)
 
 
-Workflow
-========
+游戏服务器信息
+-------
+**名称：** Moscow PvP Server yy:29333357 QQ:811931139
 
-To compile the entire project, run "mvn install".
+**ＩＰ：** 91.218.244.107
 
-To run the application, run "mvn jetty:run" and open http://localhost:8080/ .
+Developer
+---------
+[Broderick Johansson](mailto:z@bkLab.org)
 
-To produce a deployable production mode WAR:
-- change productionMode to true in the servlet class configuration (nested in the UI class)
-- run "mvn clean package"
-- test the war file with "mvn jetty:run-war"
+[Websites](https://broderick.cn)
 
-Client-Side compilation
--------------------------
-
-The generated maven project is using an automatically generated widgetset by default. 
-When you add a dependency that needs client-side compilation, the maven plugin will 
-automatically generate it for you. Your own client-side customizations can be added into
-package "client".
-
-Debugging client side code
-  - run "mvn vaadin:run-codeserver" on a separate console while the application is running
-  - activate Super Dev Mode in the debug window of the application
-
-Developing a theme using the runtime compiler
--------------------------
-
-When developing the theme, Vaadin can be configured to compile the SASS based
-theme at runtime in the server. This way you can just modify the scss files in
-your IDE and reload the browser to see changes.
-
-To use the runtime compilation, open pom.xml and comment out the compile-theme 
-goal from vaadin-maven-plugin configuration. To remove a possibly existing 
-pre-compiled theme, run "mvn clean package" once.
-
-When using the runtime compiler, running the application in the "run" mode 
-(rather than in "debug" mode) can speed up consecutive theme compilations
-significantly.
-
-It is highly recommended to disable runtime compilation for production WAR files.
-
-Using Vaadin pre-releases
--------------------------
-
-If Vaadin pre-releases are not enabled by default, use the Maven parameter
-"-P vaadin-prerelease" or change the activation default value of the profile in pom.xml .
+[Broderick Labs](https://bkLab.org)

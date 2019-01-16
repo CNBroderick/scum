@@ -3,6 +3,10 @@ package org.bklab.scum;
 import dataq.core.jdbc.IRowMapper;
 
 import java.sql.ResultSet;
+import java.util.Locale;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @SuppressWarnings("unused")
 public class ScumCode {
@@ -55,7 +59,7 @@ public class ScumCode {
     }
 
     @SuppressWarnings("WeakerAccess")
-    public static ScumCode parse(ResultSet r){
+    public static ScumCode parse(ResultSet r) {
         try {
             return new ScumCode().setType(r.getString("type"))
                     .setCode(r.getString("code"))
@@ -70,14 +74,17 @@ public class ScumCode {
         //noinspection unchecked,Anonymous2MethodRef
         return new IRowMapper() {
             @Override
-            public ScumCode mapRow(ResultSet resultSet){
+            public ScumCode mapRow(ResultSet resultSet) {
                 return ScumCode.parse(resultSet);
             }
         };
     }
 
     public Boolean isMatch(String s) {
-        return s == null ? Boolean.TRUE : (type + code + enDescription + cnDescription).toLowerCase().contains(s.toLowerCase());
+        return s == null ? Boolean.TRUE :
+                Pattern.matches(Stream.of(s.toLowerCase(Locale.CHINA).split(""))
+                                .collect(Collectors.joining(".*", ".*", ".*")),
+                        (type + code + enDescription + cnDescription).toLowerCase());
     }
 
     @Override

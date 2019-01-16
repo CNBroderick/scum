@@ -1,0 +1,167 @@
+// If you edit this file you need to compile the theme. See README.md for details.
+// Global variable overrides. Must be declared before importing Valo.
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+@import "../valo/valo.scss";
+
+@mixin bklab {
+  @include valo;
+
+  // Insert your own theme rules here
+
+  //.v-ui {
+  //  //background: #e3efff !important;
+  //  background-image: url("img/background-003.jpg") !important;
+  //  background-size: cover;
+  //}
+
+  #check-code-button {
+    border: 0;
+    padding: 0;
+    height: auto !important;
+  }
+
+  #check-code-button:focus:after {
+    -webkit-box-shadow: 0 0 0 0 rgba(25, 125, 225, 0.5);
+    box-shadow: 0 0 0 0 rgba(25, 125, 225, 0.5);
+  }
+
+  .login-box {
+    background-image: url("img/background-003.jpg");
+    background-size: cover;
+  }
+
+  .login-form {
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    border: 10px aquamarine !important;
+    color: #8ebd1a;
+  }
+
+  .login-placeholder {
+    font-size: 10px;
+  }
+
+  .color-green {
+    color: greenyellow !important;
+  }
+
+  .color-red {
+    color: orangered !important;
+  }
+  .color-black {
+    color: black !important;
+  }
+
+  .no-padding {
+    padding: 0 !important;
+  }
+
+  .v-grid-cell {
+    padding: 0 3px;
+  }
+
+  .transparent-button {
+    background: none !important;
+    border: none !important;
+    -webkit-mask-box-image: none !important;
+    -webkit-box-shadow: none !important;
+  }
+  .transparent-button:focus:after {
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+
+
+  .tree-grid {
+    .v-icon {
+      color: #00a65a;
+    }
+
+    .v-treegrid-row-stripe > td {
+      background-color: white;
+    }
+
+    .v-grid-body {
+      .v-grid-row-stripe {
+        td {
+          background-color: white;
+        }
+      }
+
+      .v-grid-row, .v-grid-row-has-data {
+        .v-grid-cell {
+          color: #777;
+        }
+
+      }
+    }
+
+    th {
+      color: #333;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+  }
+
+  .v-customlayout {
+    background-color: white;
+    color: black;
+  }
+
+  .v-grid-row-selected > .v-grid-cell {
+    color: white !important;
+
+    * {
+      color: white !important;
+    }
+  }
+
+  #content > div.v-panel-content.v-panel-content-borderless.v-panel-content-m-t-0.v-panel-content-p-t-0.v-scrollable
+  > div > div.v-grid-tablewrapper > table > tbody > * > td:nth-child(7) > div > div {
+    height: 28px !important;
+  }
+
+  .v-menubar-popup {
+    background: rgba(255, 255, 255, 0.95);
+    color: #191919;
+    font-size: 12px;
+    font-family: "华文楷体", "华文新魏", "华文宋体", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    .v-menubar-menuitem {
+      padding-left: 6px;
+      padding-right: 50px;
+
+      .v-icon {
+        color: rgb(152, 223, 88);
+        padding-right: 6px;
+      }
+    }
+  }
+
+  .v-grid-column-header-content {
+    text-align: center;
+  }
+}

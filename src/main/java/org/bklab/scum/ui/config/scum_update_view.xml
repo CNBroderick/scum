@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<view title="资产基本信息">
+    <children>
+        <rowlayout width="500" height="180" styles="form-box">
+            <row grow="0.5"/>
+            <row grow="1">
+                <label caption="英文描述:" grow="1.3" align="MIDDLE_RIGHT"/>
+                <textfield id="en" grow="6" align="MIDDLE_RIGHT" width="100%" styles="tiny"/>
+            </row>
+            <row grow="1">
+                <label caption="中文描述:" grow="1.3" align="MIDDLE_RIGHT"/>
+                <textfield id="cn" grow="6" align="MIDDLE_RIGHT" width="100%" styles="tiny"/>
+            </row>
+            <row grow="2">
+                <button id="save" grow="4" icon="check" align="MIDDLE_RIGHT" caption="保存"
+                        primarystyle="btn btn-primary btn-sm tiny" width="80px"/>
+                <button id="cancel" grow="3" icon="close" align="MIDDLE_LEFT" caption="取消"
+                        primarystyle="btn btn-default btn-sm tiny" width="80px"/>
+            </row>
+        </rowlayout>
+    </children>
+
+</view>

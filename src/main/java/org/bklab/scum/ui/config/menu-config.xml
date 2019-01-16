@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menuconfig>
+    <sidemenu name="explorer" icon="book_dollar">
+        <menuitem caption="SCUM指令查询" icon="SEARCH" class="org.bklab.scum.ui.ScumAdminView"/>
+    </sidemenu>
+</menuconfig>

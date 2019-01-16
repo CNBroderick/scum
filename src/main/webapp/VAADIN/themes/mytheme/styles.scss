@@ -1,0 +1,17 @@
+@import "mytheme";
+@import "addons";
+@import "bootstrap-button";
+@import "dataq-vaadin";
+@import "hybrid-menu";
+@import "bklab";
+// This file prefixes all rules with the theme name to avoid causing conflicts with other themes.
+// The actual styles should be defined in mytheme.scss
+
+.mytheme {
+  @include addons;
+  @include mytheme;
+  @include bootstrap-button;
+  @include dataq-vaadin;
+  @include hybrid-menu;
+  @include bklab;
+}

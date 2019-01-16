@@ -1,0 +1,213 @@
+@mixin hybrid-menu {
+  // 左侧整体
+  .hybridMenu {
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    border-right-color: #dcdee2;
+    border-right-width: 1px;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    border-style: solid;
+    width: 250px !important;
+  }
+
+  .hybridMenu .contentBox {
+    padding: 15px !important;
+  }
+
+  /* Left Menu */
+  .hybridMenu .leftMenu {
+    padding: 0 !important;
+    overflow-y: auto;
+    z-index: 100;
+
+  }
+
+  // 左侧含有文字的菜单项
+  .hybridMenu .leftMenu .v-slot {
+    margin-top: 3px;
+    height: auto !important;
+    //background: rgba(216, 236, 237, 1);
+  }
+
+
+  .hybridMenu .leftMenu .menuButton {
+    background: transparent;
+    display: block;
+    cursor: pointer;
+    -webkit-transition: background 0.3s, border-left 0.3s, height 0.5s;
+    -moz-transition: background 0.3s, border-left 0.3s, height 0.5s;
+    -ms-transition: background 0.3s, border-left 0.3s, height 0.5s; /* IE10 is actually unprefixed */
+    -o-transition: background 0.3s, border-left 0.3s, height 0.5s;
+    transition: background 0.3s, border-left 0.3s, height 0.5s;
+    border-left: 0 solid transparent;
+    overflow: hidden;
+  }
+
+  .hybridMenu .leftMenu .menuButton.active {
+    border-left-width: 3px;
+  }
+
+  .hybridMenu .leftMenu .menuButton:hover, .hybridMenu .leftMenu .menuButton.active:hover {
+    border-left-width: 3px;
+  }
+
+  .hybridMenu .leftMenu .menuButton-wrap {
+    display: block;
+    transition: border 0.3s;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%); /* IE10 is actually unprefixed */
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .hybridMenu .leftMenu .menuButton-wrap .v-icon {
+    margin-left: 10px;
+    width: 25px;
+    text-align: right;
+    font-size: 10px;
+  }
+
+  .menuButton-caption {
+    span {
+      width: 120px !important;
+    }
+  }
+
+  .hybridMenu .leftMenu .menuButton-wrap .menuButton-caption {
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  .hybridMenu .leftMenu.minimal .menuButton-wrap .menuButton-caption {
+    position: absolute;
+  }
+
+  //.hybridMenu .leftMenu .menuButton.subMenuButton .menuButton-caption .v-icon {
+  //  position: absolute;
+  //  right: 5px;
+  //  margin: 0;
+  //  height: 30px;
+  //  width: 30px;
+  //  line-height: 30px;
+  //  -webkit-transition: transform 0.3s ease-in-out;
+  //  -moz-transition: transform 0.3s ease-in-out;
+  //  -ms-transition: transform 0.3s ease-in-out; /* IE10 is actually unprefixed */
+  //  -o-transition: transform 0.3s ease-in-out;
+  //  transition: transform 0.3s ease-in-out;
+  //  -webkit-transform: rotate(0deg);
+  //  -moz-transform: rotate(0deg);
+  //  -ms-transform: rotate(0deg); /* IE10 is actually unprefixed */
+  //  -o-transform: rotate(0deg);
+  //  transform: rotate(0deg);
+  //}
+  //
+  //.hybridMenu .leftMenu .menuButton.subMenuButton.active .menuButton-caption .v-icon {
+  //  -webkit-transform: rotate(-180deg);
+  //  -moz-transform: rotate(-180deg);
+  //  -ms-transform: rotate(-180deg); /* IE10 is actually unprefixed */
+  //  -o-transform: rotate(-180deg);
+  //  transform: rotate(-180deg);
+  //  line-height: 30px;
+  //}
+
+  .hybridMenu .centralContent .v-expand {
+    -webkit-transition: padding-left 0.75s ease-in-out;
+    -moz-transition: padding-left 0.75s ease-in-out;
+    -ms-transition: padding-left 0.75s ease-in-out; /* IE10 is actually unprefixed */
+    -o-transition: padding-left 0.75s ease-in-out;
+    transition: padding-left 0.75s ease-in-out;
+    z-index: 10;
+  }
+
+  .hybridMenu .centralContent .v-expand .v-expand {
+    transition: unset;
+  }
+
+  .hybridMenu .v-slot-leftMenu {
+    -webkit-transition: margin-left 0.75s ease-in-out;
+    -moz-transition: margin-left 0.75s ease-in-out;
+    -ms-transition: margin-left 0.75s ease-in-out; /* IE10 is actually unprefixed */
+    -o-transition: margin-left 0.75s ease-in-out;
+    transition: margin-left 0.75s ease-in-out;
+
+  }
+
+  .hybridMenu .leftMenu {
+    -webkit-transition: width 0.75s ease-in-out;
+    -moz-transition: width 0.75s ease-in-out;
+    -ms-transition: width 0.75s ease-in-out; /* IE10 is actually unprefixed */
+    -o-transition: width 0.75s ease-in-out;
+    transition: width 0.75s ease-in-out;
+  }
+
+  .hybridMenu .leftMenu .menuSubMenuContent {
+    //border-left: 1px solid transparent;
+    margin-left: 24px;
+    width: calc(100% - 24px) !important;
+  }
+
+  .hybridMenu .leftMenu .v-slot-menuSubMenuContent {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    max-height: 0;
+    -webkit-transition: max-height 0.5s ease-in-out;
+    -moz-transition: max-height 0.5s ease-in-out;
+    -ms-transition: max-height 0.5s ease-in-out; /* IE10 is actually unprefixed */
+    -o-transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .hybridMenu .leftMenu .v-slot-menuSubMenuContent.v-slot-open {
+    max-height: 1000px;
+  }
+
+  // 控制字体颜色
+  .hybridMenu.design_dark {
+    color: #191919;
+
+    .v-icon {
+      color: #737373;
+    }
+  }
+
+  .hybridMenu.design_dark .v-slot-leftMenu {
+
+  }
+
+  .hybridMenu.design_dark .leftMenu .menuButton.active {
+    //border-right-color: rgb(45, 140, 240); // 选中菜单左侧竖线
+    background: rgba(240, 250, 255, 0.5);
+    //color: #5aa5f3;
+    //background: #d83a2b  ;
+    outline: none;
+  }
+
+  .hybridMenu.design_dark .leftMenu .menuButton:hover {
+    background: rgba(66, 66, 66, 0.5);
+    color: whitesmoke;
+
+    .v-icon {
+      color: whitesmoke;
+    }
+  }
+
+  .hybridMenu.design_dark .leftMenu .menuSubMenuContent {
+    border-right-color: rgb(117, 117, 117);
+  }
+
+  .hybridMenu.design_dark .contentBox {
+    background: rgba(117, 117, 117, 0.5);
+  }
+
+  #pagebar {
+    padding-bottom: 4px;
+    background: whitesmoke;
+  }
+
+}
